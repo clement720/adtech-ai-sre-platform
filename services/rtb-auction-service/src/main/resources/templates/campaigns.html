@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Campaigns</title>
+    <style>
+        body { font-family: Arial; background:#020617; color:white; padding:30px; }
+        table { width:100%; border-collapse: collapse; background:#1e293b; }
+        th, td { padding:12px; border-bottom:1px solid #334155; }
+        a, button { color:white; background:#2563eb; padding:10px; text-decoration:none; border-radius:6px; }
+        .top { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+    </style>
+</head>
+<body>
+<div class="top">
+    <h1>Ad Campaigns</h1>
+    <a href="/campaigns/new">Create Campaign</a>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Advertiser</th>
+        <th>Country</th>
+        <th>Device</th>
+        <th>Content</th>
+        <th>Max Bid</th>
+        <th>Budget</th>
+        <th>Spent</th>
+        <th>Active</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="c : ${campaigns}">
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.advertiser}"></td>
+        <td th:text="${c.targetCountry}"></td>
+        <td th:text="${c.targetDevice}"></td>
+        <td th:text="${c.targetContentType}"></td>
+        <td th:text="${c.maxBid}"></td>
+        <td th:text="${c.dailyBudget}"></td>
+        <td th:text="${c.spentToday}"></td>
+        <td th:text="${c.active}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+<a href="/">Back to Dashboard</a>
+</body>
+</html>

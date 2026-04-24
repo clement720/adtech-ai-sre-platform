@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AdTech RTB Login</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        input, button {
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+        }
+        button {
+            background: #22c55e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <h2>AdTech Login</h2>
+    <form method="post" action="/login">
+        <input name="username" placeholder="Username"/>
+        <input type="password" name="password" placeholder="Password"/>
+        <button type="submit">Login</button>
+    </form>
+</div>
+</body>
+</html>

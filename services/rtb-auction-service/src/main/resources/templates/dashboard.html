@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AdTech RTB Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #020617;
+            color: white;
+            padding: 30px;
+        }
+        .card {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        a {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+        pre {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+        button {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>AdTech RTB SRE Dashboard</h1>
+
+<div class="grid">
+    <div class="card">
+        <h3>RTB Auction Service</h3>
+        <p>Status: Running</p>
+    </div>
+
+    <div class="card">
+        <h3>Metrics</h3>
+        <p>Prometheus endpoint:</p>
+        <a href="/actuator/prometheus">/actuator/prometheus</a>
+    </div>
+
+    <div class="card">
+        <h3>SRE Signals</h3>
+        <p>Bid Rate, No-Bid Rate, Timeout Rate, Latency</p>
+    </div>
+</div>
+
+<div class="card">
+    <h3>Test Auction API</h3>
+    <p>Use curl:</p>
+    <pre>curl -X POST http://localhost:8081/auction \
+-H "Content-Type: application/json" \
+-d '{"viewerId":"viewer-1001","country":"US","deviceType":"CTV","contentType":"live-sports","liveEvent":true,"adSlot":"mid-roll"}'</pre>
+</div>
+
+<div class="card">
+    <h3>RTB Auction Test</h3>
+    <p>Simulate viewer request and see BID / NO_BID / TIMEOUT.</p>
+    <a href="/auction-test">Open Auction Test</a>
+</div>
+
+<form method="post" action="/logout">
+    <button type="submit">Logout</button>
+</form>
+
+</body>
+</html>
