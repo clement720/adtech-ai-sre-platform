@@ -3,12 +3,12 @@ build/
 .gradle/
 *.jar
 
-# OS files
+# OS
 .DS_Store
-
-# Logs
-*.log
 
 # IDE
 .vscode/
 .idea/
+
+# logs
+*.log
